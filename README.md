@@ -121,7 +121,3 @@ streamlit run dashboard/dashboard.py
 
 **Korn-aphichit Ngaopan**\
 🌐 GitHub: [@Izenberk](https://github.com/Izenberk)
-
----
-
-✅ You’re ready to paste this into `README.md` now and commit it! Let me know if you want to generate a screenshot placeholder or deploy link next!
