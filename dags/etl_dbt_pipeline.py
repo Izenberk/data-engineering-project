@@ -12,7 +12,7 @@ default_args = {
 with DAG(
     dag_id='etl_dbt_pipeline',
     default_args=default_args,
-    schedule_interval='@weekly',
+    schedule_interval='@daily',
     description='Run ETL script and the dbt model',
     tags=['etl', 'dbt']
     ) as dag:
