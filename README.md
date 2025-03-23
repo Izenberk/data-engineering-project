@@ -1,14 +1,18 @@
+✅ Updated README.md for Your Project
+
 # 📦 data-engineering-project
 
-## 🚀 End-to-End Data Engineering Pipeline with Airflow, dbt, and PostgreSQL
+## 🚀 End-to-End Data Engineering Pipeline with Airflow, dbt, PostgreSQL & Streamlit
 
-This project demonstrates a complete batch data pipeline using **Apache Airflow**, **dbt**, and **PostgreSQL**. It extracts E-commerce transactional data, loads it into a PostgreSQL database, transforms it using dbt, and prepares it for visualization.
+This project demonstrates a complete batch data pipeline using **Apache Airflow**, **dbt**, and **PostgreSQL** for backend processing, with a front-end dashboard built in **Streamlit** for visualization.
+
+It extracts E-commerce transactional data, loads it into PostgreSQL, transforms it using dbt models, and displays the results via an interactive dashboard.
 
 ---
 
 ## 🗺️ Project Architecture
 
-> E-commerce Data → ETL (Python) → PostgreSQL (raw) → dbt (modeled) → Dashboard (Looker Studio)
+> E-commerce Data → ETL (Python) → PostgreSQL (raw) → dbt (modeled) → Dashboard (Streamlit)
 
 ---
 
@@ -19,24 +23,26 @@ This project demonstrates a complete batch data pipeline using **Apache Airflow*
 - 🐘 PostgreSQL (Storage)
 - 🐍 Python (`etl_load.py`)
 - 📦 dbt (Transformations)
-- 📊 Google Looker Studio *(optional – for dashboarding)*
+- 📊 Streamlit (Dashboard)
 
 ---
 
 ## 🗂️ Project Structure
 
-```
+
 data-engineering-project/
 ├── dags/                   # Airflow DAGs (via symlinks)
 ├── etl/                    # Python ETL scripts
 │   └── etl_load.py
 ├── dbt_project/            # dbt models and config
 │   └── models/
+├── dashboard/              # Streamlit dashboard
+│   └── dashboard.py
 ├── docker/
 │   └── Dockerfile          # Custom Airflow image with dbt & dependencies
 ├── docker-compose.yml
 └── README.md
-```
+
 
 ---
 
@@ -46,59 +52,72 @@ data-engineering-project/
 
 ```bash
 docker-compose up -d
-```
 
 This starts Airflow, PostgreSQL, and required services.
 
-### 2. 🧪 Activate Virtual Environment (Optional)
+2. 🧪 Activate Virtual Environment (Optional)
 
-```bash
 source .venv/bin/activate
-```
 
-### 3. 🌐 Access Airflow UI
+3. 🌐 Access Airflow UI
 
-- Open browser: [http://localhost:8080](http://localhost:8080)
-- Login: `airflow` / `airflow` (default)
+Open browser: http://localhost:8080
 
-### 4. ▶️ Trigger the DAG
+Login: airflow / airflow (default)
 
-- DAG name: `etl_with_dbt`
-- Runs:
-  - `etl_load.py` → load raw data
-  - `dbt run` → transform data
+4. ▶️ Trigger the DAG
 
----
+DAG name: etl_with_dbt
 
-## 🧠 Key Features
+Runs:
 
-- Clean separation between ETL and transformation logic
-- Uses **symlinks** to keep `dags/` clean
-- Connects to PostgreSQL differently for local vs Docker (`localhost` → `postgres`)
-- Custom Airflow image with:
-  - `dbt-postgres`
-  - `pandas`, `sqlalchemy`, etc.
+etl_load.py → load raw data
 
----
+dbt run → transform data
 
-## 📸 Screenshots (Optional)
+(Optional) dbt test
 
-- Airflow DAG
-- dbt model graph
-- Dashboard (Looker Studio)
+5. 🖥️ Run Streamlit Dashboard
 
----
+streamlit run dashboard/dashboard.py
 
-## ✅ To-Do / Future Improvements
+Open: http://localhost:8501
 
-- [ ] Add Airflow sensors or more DAGs
-- [ ] Add dbt tests & documentation
-- [ ] Create automated dashboard refresh
-- [ ] Add CI/CD pipeline
+🧠 Key Features
 
----
+End-to-end orchestration with Apache Airflow
 
-## 👤 Author
+Modular pipeline with clean ETL and dbt transformations
 
-**Korn-aphichit Ngaopan**  
-🌐 GitHub: [@Izenberk](https://github.com/Izenberk)
+Interactive Streamlit dashboard with metrics and visualizations
+
+Realistic dev setup using Docker Compose
+
+dbt model outputs used directly in dashboard (no duplication!)
+
+📸 Screenshots
+
+✅ Airflow DAG
+![Airflow](https://github.com/user-attachments/assets/2fd338cf-8e42-4cd6-90bc-f699cc7a7d66)
+
+✅ Streamlit dashboard (with metrics and chart)
+![Dashboard_1](https://github.com/user-attachments/assets/6e6d3b75-4f70-4f5b-a730-134c066166ea)
+![Dashboard_2](https://github.com/user-attachments/assets/7f8e2784-da97-468d-aa66-e37a2dc43918)
+
+
+
+✅ To-Do / Future Improvements
+
+Add Airflow sensors or DAG dependencies
+
+Add dbt tests and CI checks
+
+Deploy dashboard to Streamlit Cloud
+
+Add automated data refresh schedule
+
+Enhance visualizations with filters and charts
+
+👤 Author
+
+Korn-aphichit Ngaopan🌐 GitHub: @Izenberk
