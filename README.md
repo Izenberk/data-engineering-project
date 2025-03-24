@@ -34,6 +34,7 @@ data-engineering-project/
 │   └── etl_load.py
 ├── analytics/                # dbt models and config
 │   └── models/
+├── venv/                     # setup virtual environment
 ├── dashboard.py              # Streamlit dashboard
 ├── Dockerfile                # Custom Airflow image with dbt & dependencies          
 ├── docker-compose.yml
