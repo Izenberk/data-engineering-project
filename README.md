@@ -9,8 +9,43 @@ It extracts E-commerce transactional data, loads it into PostgreSQL, transforms 
 ---
 
 ## 🗺️ Project Architecture
+                        ┌─────────────────────────┐
+                        │      Data Sources       │
+                        │   • CSV files (local)   │
+                        └──────────┬──────────────┘
+                                   │
+                                   ▼
+                        ┌─────────────────────────┐
+                        │     Extraction Layer     │
+                        │  (Python scripts via     │
+                        │   Airflow DAGs)          │
+                        └──────────┬──────────────┘
+                                   │
+                                   ▼
+                        ┌─────────────────────────┐
+                        │   Staging Layer (Raw)   │
+                        │    PostgreSQL Database  │
+                        └──────────┬──────────────┘
+                                   │
+                                   ▼
+                        ┌─────────────────────────┐
+                        │  Transformation Layer    │
+                        │        (dbt Core)        │
+                        └──────────┬──────────────┘
+                                   │
+                                   ▼
+                        ┌─────────────────────────┐
+                        │  Analytics Layer (DB)   │
+                        │  • Cleaned Tables       │
+                        │  • Aggregated Tables    │
+                        └──────────┬──────────────┘
+                                   │
+                                   ▼
+                        ┌─────────────────────────┐
+                        │  Visualization Layer    │
+                        │      (Streamlit App)     │
+                        └─────────────────────────┘
 
-> E-commerce Data → ETL (Python) → PostgreSQL (raw) → dbt (modeled) → Dashboard (Streamlit)
 
 ---
 
@@ -19,7 +54,7 @@ It extracts E-commerce transactional data, loads it into PostgreSQL, transforms 
 - 🐳 Docker & Docker Compose
 - ⏰ Apache Airflow (Orchestration)
 - 🐘 PostgreSQL (Storage)
-- 🐍 Python (`etl_load.py`)
+- 🐍 Python (ETL load, Pipline)
 - 📦 dbt (Transformations)
 - 📊 Streamlit (Dashboard)
 
