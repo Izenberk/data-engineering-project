@@ -29,7 +29,7 @@ It extracts E-commerce transactional data, loads it into PostgreSQL, transforms 
 
 ```
 data-engineering-project/
-├── dags/                   # Airflow DAGs (via symlinks)
+├── dags/                   # Airflow DAGs
 ├── etl/                    # Python ETL scripts
 │   └── etl_load.py
 ├── analytics/            # dbt models and config
