@@ -67,7 +67,7 @@ data-engineering-project/
 ├── dags/                     # Airflow DAGs
 ├── scripts/                  # Python ETL scripts
 │   └── etl_load.py
-├── analytics/                # dbt models and config
+├── analytics/                # dbt models and config (rename from dbt/)
 │   └── models/
 ├── venv/                     # setup virtual environment
 ├── dashboard.py              # Streamlit dashboard
