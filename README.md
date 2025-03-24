@@ -32,7 +32,7 @@ data-engineering-project/
 ├── dags/                   # Airflow DAGs (via symlinks)
 ├── etl/                    # Python ETL scripts
 │   └── etl_load.py
-├── dbt_project/            # dbt models and config
+├── analytics/            # dbt models and config
 │   └── models/
 ├── dashboard/              # Streamlit dashboard
 │   └── dashboard.py
