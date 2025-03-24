@@ -12,35 +12,35 @@ It extracts E-commerce transactional data, loads it into PostgreSQL, transforms 
                                 ┌─────────────────────────┐
                                 │      Data Sources       │
                                 │   • CSV files (local)   │
-                                └──────────┬──────────────┘
-                                           │
-                                           ▼
+                                └───────────┬─────────────┘
+                                            │
+                                            ▼
                                 ┌─────────────────────────┐
                                 │     Extraction Layer    │
                                 │  (Python scripts via    │
                                 │   Airflow DAGs)         │
-                                └──────────┬──────────────┘
-                                           │
-                                           ▼
+                                └───────────┬─────────────┘
+                                            │
+                                            ▼
                                 ┌─────────────────────────┐
                                 │   Staging Layer (Raw)   │
                                 │    PostgreSQL Database  │
-                                └──────────┬──────────────┘
-                                           │
-                                           ▼
+                                └───────────┬─────────────┘
+                                            │
+                                            ▼
                                 ┌─────────────────────────┐
                                 │  Transformation Layer   │
                                 │        (dbt Core)       │
-                                └──────────┬──────────────┘
-                                           │
-                                           ▼
+                                └───────────┬─────────────┘
+                                            │
+                                            ▼
                                 ┌─────────────────────────┐
                                 │  Analytics Layer (DB)   │
                                 │  • Cleaned Tables       │
                                 │  • Aggregated Tables    │
-                                └──────────┬──────────────┘
-                                           │
-                                           ▼
+                                └───────────┬─────────────┘
+                                            │
+                                            ▼
                                 ┌─────────────────────────┐
                                 │  Visualization Layer    │
                                 │      (Streamlit App)    │
