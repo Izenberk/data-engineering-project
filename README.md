@@ -29,15 +29,13 @@ It extracts E-commerce transactional data, loads it into PostgreSQL, transforms 
 
 ```
 data-engineering-project/
-├── dags/                   # Airflow DAGs
-├── etl/                    # Python ETL scripts
+├── dags/                     # Airflow DAGs
+├── scripts/                  # Python ETL scripts
 │   └── etl_load.py
-├── analytics/            # dbt models and config
+├── analytics/                # dbt models and config
 │   └── models/
-├── dashboard/              # Streamlit dashboard
-│   └── dashboard.py
-├── docker/                 
-│   └── Dockerfile          # Custom Airflow image with dbt & dependencies
+├── dashboard.py              # Streamlit dashboard
+├── Dockerfile                # Custom Airflow image with dbt & dependencies          
 ├── docker-compose.yml
 └── README.md
 ```
